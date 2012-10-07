@@ -126,4 +126,14 @@ public class Customer {
     public void setStreet(String street) {
         this.street = street;
     }
+
+    /**
+     * This returns the customer's name as a string
+     * 
+     * @return the first and last name seperated by a space
+     */
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
+    }
 }

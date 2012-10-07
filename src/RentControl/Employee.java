@@ -54,4 +54,14 @@ public class Employee {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    /**
+     * This returns the employee's name as a string
+     * 
+     * @return the first and last name seperated by a space
+     */
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
+    }
 }
