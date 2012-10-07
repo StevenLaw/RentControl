@@ -3,6 +3,14 @@ package RentControl;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This class acts as the main controller of the data files.  It is here that 
+ * most of the database calls originate as well as adding employees, customers, 
+ * equipment types, and items.  It is also responsible for creating new 
+ * transactions.
+ * 
+ * @author Steven Law
+ */
 public class RentManagement {
 
 //  private java.util.Vector employees;

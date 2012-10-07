@@ -2,11 +2,9 @@ package RentDB;
 
 public class DBConnector {
 
-  private String connStr;
+    private String connStr;
 
-      
-  public DBConnector getConnection() {
-  return null;
-  }
-
+    public static DBConnector getConnection() {
+        return null;
+    }
 }

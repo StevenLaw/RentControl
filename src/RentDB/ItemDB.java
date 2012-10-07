@@ -4,12 +4,11 @@ import RentControl.Item;
 
 public class ItemDB {
 
-  public Item getItem() {
-  return null;
-  }
+    public Item getItem() {
+        return null;
+    }
 
-  public boolean storeItem(Item item) {
-  return false;
-  }
-
+    public boolean storeItem(Item item) {
+        return false;
+    }
 }

@@ -2,18 +2,33 @@ package RentControl;
 
 import java.util.Date;
 
+/**
+ * This class stores information about reservations.
+ * 
+ * @author Steven Law
+ */
 public class Reservation {
 
     private Date startTime;
     private Date endTime;
-    private Enum chargeScale;
+    private ChargeScale chargeScale;
     private boolean returned;
     private boolean paid;
-    // instead of 
+    // instead of storing an instance of the item we represent it with a number
     private int itemNo;
 
-    public Reservation(Date startTime, Date endTime, Enum chargeScale, boolean 
-            returned, boolean paid, int itemNo) {
+    /**
+     * This is the constructor that initialises the required attributes.
+     * 
+     * @param startTime when the reservation begins
+     * @param endTime when the reservation ends
+     * @param chargeScale the representation of how the customer is paying
+     * @param returned whether or not the item has been returned
+     * @param paid whether or not the reservation has been paid for
+     * @param itemNo the number of the item reserved
+     */
+    public Reservation(Date startTime, Date endTime, ChargeScale chargeScale, 
+            boolean returned, boolean paid, int itemNo) {
         this.startTime = startTime;
         this.endTime = endTime;
         this.chargeScale = chargeScale;
@@ -29,11 +44,15 @@ public class Reservation {
      * @return true if the reservation has expired false otherwise.
      */
     public boolean isExpired() {
-        
-        return false;
+        // get the current date
+        Date currDate = new Date();
+        if (currDate.after(endTime))
+            return true; // if the endTime has passed return true
+        else
+            return false; // otherwise return false
     }
 
-    public Enum getChargeScale() {
+    public ChargeScale getChargeScale() {
         return chargeScale;
     }
 

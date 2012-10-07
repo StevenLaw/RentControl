@@ -2,6 +2,11 @@ package RentControl;
 
 import java.util.List;
 
+/**
+ * This class stores the customer's information.
+ * 
+ * @author Steven Law
+ */
 public class Customer {
 
     private int CID;
@@ -21,7 +26,13 @@ public class Customer {
      * @element-type Transaction
      */
     
-    
+    /**
+     * This basic constructor sets the required attributes for the customer
+     * 
+     * @param CID the customer's id
+     * @param firstName the customer's first name
+     * @param lastName the customer's last name
+     */
     public Customer(int CID, String firstName, String lastName) {
         this.CID = CID;
         this.firstName = firstName;
@@ -34,10 +45,6 @@ public class Customer {
 
     public int getCID() {
         return CID;
-    }
-
-    public void setCID(int CID) {
-        this.CID = CID;
     }
 
     public String getCity() {

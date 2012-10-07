@@ -4,12 +4,11 @@ import RentControl.Transaction;
 
 public class TransactionDB {
 
-  public Transaction getTransaction() {
-  return null;
-  }
+    public Transaction getTransaction() {
+        return null;
+    }
 
-  public boolean storeTransaction(Transaction transaction) {
-  return false;
-  }
-
+    public boolean storeTransaction(Transaction transaction) {
+        return false;
+    }
 }
