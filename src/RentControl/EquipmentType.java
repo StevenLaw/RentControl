@@ -10,15 +10,15 @@ import java.util.List;
  */
 public class EquipmentType {
 
-    protected int EqID;
-    protected String equipmentName;
-    protected float minCharge;
-    protected float hourly;
-    protected float daily;
-    protected int weekend;
-    protected float weekly;
-    protected float month;
-    protected float cost;
+    private int EqID;
+    private String equipmentName;
+    private float minCharge;
+    private float hourly;
+    private float daily;
+    private int weekend;
+    private float weekly;
+    private float month;
+    private float cost;
 
     /**
      * This constructor sets the equipment type's name, id, charge scales, and
