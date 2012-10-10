@@ -55,8 +55,8 @@ public class Transaction {
         this.CID = CID;
         rentals = new ArrayList<Reservation>();
         sales = new ArrayList<Purchase>();
-        rentalDB = new ReservationDB();
-        saleDB = new PurchaseDB();
+//        rentalDB = new ReservationDB();
+//        saleDB = new PurchaseDB();
     }
 
     /**
