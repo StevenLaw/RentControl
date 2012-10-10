@@ -1,14 +1,23 @@
 package RentDB;
 
 import RentControl.Item;
+import java.util.List;
 
 public class ItemDB {
 
-    public Item getItem() {
+    public boolean addItem(Item item) {
+        return false;
+    }
+
+    public boolean updateItem(Item item) {
+        return false;
+    }
+
+    public Item getItem(int ItemNo) {
         return null;
     }
 
-    public boolean storeItem(Item item) {
-        return false;
+    public List getItemByType(int EqID) {
+        return null;
     }
 }

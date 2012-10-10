@@ -8,7 +8,11 @@ public class EmployeeDB {
         return null;
     }
 
-    public boolean storeEmployee(Employee employee) {
+    public boolean addEmployee(Employee employee) {
+        return false;
+    }
+
+    public boolean UpdateEmployee(Employee employee) {
         return false;
     }
 }

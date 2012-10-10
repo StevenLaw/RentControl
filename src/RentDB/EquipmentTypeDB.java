@@ -1,14 +1,24 @@
 package RentDB;
 
+import java.util.List;
 import RentControl.EquipmentType;
 
 public class EquipmentTypeDB {
 
-    public EquipmentType getEquipmentType() {
-        return null;
-    }
+  public boolean addEquipmentType(EquipmentType type) {
+  return false;
+  }
 
-    public boolean storeEquipmentType(EquipmentType type) {
-        return false;
-    }
+  public boolean updateEquipmentType(EquipmentType type) {
+  return false;
+  }
+
+  public EquipmentType getEquipmentType(int EqID) {
+  return null;
+  }
+
+  public List getEquipmentType(String search) {
+  return null;
+  }
+
 }

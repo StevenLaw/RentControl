@@ -12,6 +12,8 @@ public class Employee {
     private int EID;
     private String firstName;
     private String lastName;
+    private boolean administrator;
+    private boolean terminated;
 
     /**
      * This basic constructor sets the required attributes for the class.
@@ -24,6 +26,8 @@ public class Employee {
         this.EID = EID;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.administrator = false;
+        this.terminated = false;
     }
 
     /**
@@ -53,6 +57,22 @@ public class Employee {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public boolean isAdministrator() {
+        return administrator;
+    }
+
+    public void setAdministrator(boolean administrator) {
+        this.administrator = administrator;
+    }
+
+    public boolean isTerminated() {
+        return terminated;
+    }
+
+    public void setTerminated(boolean terminated) {
+        this.terminated = terminated;
     }
 
     /**
