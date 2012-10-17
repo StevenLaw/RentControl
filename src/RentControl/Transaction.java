@@ -80,6 +80,10 @@ public class Transaction {
         rentals.add(reservation);
     }
 
+    public ArrayList getReservations(){
+        return rentals;
+    }
+    
     /**
      * This method takes a purchase and adds it to the list of purchases.
      * 
@@ -87,6 +91,10 @@ public class Transaction {
      */
     public void addPurchase(Purchase purchase) {
         sales.add(purchase);
+    }
+    
+    public ArrayList getPurchases(){
+        return sales;
     }
 
     public boolean creditPayment() {

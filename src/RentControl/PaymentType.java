@@ -19,4 +19,8 @@ public enum PaymentType {
     PaymentType(char code){
         this.code = code;
     }
+
+    public char getCode() {
+        return code;
+    }
 }

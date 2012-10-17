@@ -22,4 +22,8 @@ public enum ChargeScale {
     ChargeScale(char code){
         this.code = code;
     }
+
+    public char getCode() {
+        return code;
+    }
 }

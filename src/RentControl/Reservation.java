@@ -27,13 +27,13 @@ public class Reservation {
      * @param paid whether or not the reservation has been paid for
      * @param itemNo the number of the item reserved
      */
-    public Reservation(Date startTime, Date endTime, ChargeScale chargeScale, 
-            boolean returned, boolean paid, int itemNo) {
+    public Reservation(Date startTime, Date endTime, ChargeScale chargeScale,
+            int itemNo) {
         this.startTime = startTime;
         this.endTime = endTime;
         this.chargeScale = chargeScale;
-        this.returned = returned;
-        this.paid = paid;
+        this.returned = false;
+        this.paid = false;
         this.itemNo = itemNo;
     }
 

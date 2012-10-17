@@ -30,9 +30,6 @@ public class Item {
         this.onHand = true;
     }
 
-    public void setItemSalePrice(float price) {
-    }
-
     public boolean isAvailable() {
         return onHand;
     }
@@ -55,5 +52,10 @@ public class Item {
 
     public void setSalePrice(float salePrice) {
         this.salePrice = salePrice;
+    }
+
+    @Override
+    public String toString() {
+        return "" + itemNo;
     }
 }

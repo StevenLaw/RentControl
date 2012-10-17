@@ -15,7 +15,7 @@ public class EquipmentType {
     private float minCharge;
     private float hourly;
     private float daily;
-    private int weekend;
+    private float weekend;
     private float weekly;
     private float month;
     private float cost;
@@ -34,7 +34,7 @@ public class EquipmentType {
      * @param month the monthly charge for the equipment type
      * @param cost the replacement charge for the equipment type
      */
-    public EquipmentType(int EqID, String equipmentName, float minCharge, float hourly, float daily, int weekend, float weekly, float month, float cost) {
+    public EquipmentType(int EqID, String equipmentName, float minCharge, float hourly, float daily, float weekend, float weekly, float month, float cost) {
         this.EqID = EqID;
         this.equipmentName = equipmentName;
         this.minCharge = minCharge;
@@ -86,11 +86,44 @@ public class EquipmentType {
         return month;
     }
 
-    public int getWeekend() {
+    public float getWeekend() {
         return weekend;
     }
 
     public float getWeekly() {
         return weekly;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
+    public void setDaily(float daily) {
+        this.daily = daily;
+    }
+
+    public void setHourly(float hourly) {
+        this.hourly = hourly;
+    }
+
+    public void setMinCharge(float minCharge) {
+        this.minCharge = minCharge;
+    }
+
+    public void setMonth(float month) {
+        this.month = month;
+    }
+
+    public void setWeekend(float weekend) {
+        this.weekend = weekend;
+    }
+
+    public void setWeekly(float weekly) {
+        this.weekly = weekly;
+    }
+
+    @Override
+    public String toString() {
+        return equipmentName;
     }
 }
