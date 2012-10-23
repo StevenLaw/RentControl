@@ -65,7 +65,7 @@ public class Transaction {
      * @return the receipt in string format
      */
     public String generateReceipt() {
-        String receipt = "Rent It\n"
+        String receipt = "Generic Rental\n"
                 + "Transaction Number: " + TNo +"\n"
                 + "Date: " + transDate + "\n";
         return receipt;
