@@ -2,8 +2,10 @@ This repository contains the database, control, and future communication layers 
 
 The people involved in this project were:
 
-me (Steven Law)
-Charanjeev Johal
-Charles Salonga
+<ul>
+<li>me (Steven Law)</li>
+<li>Charanjeev Johal</li>
+<li>Charles Salonga</li>
+</ul>
 
 The main body of the course involved the creation of diagrams to aid the creation of a complex project.  Most of this work was done collaboratively.  The code was produced by me as a demonstration of how the final product would work.
