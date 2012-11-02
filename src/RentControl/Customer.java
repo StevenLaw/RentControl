@@ -20,6 +20,8 @@ public class Customer {
     private String phone;
     private String email;
     private int creditCard;
+    private float discount;
+    private boolean abuse;
 
     /**
      *
@@ -125,6 +127,22 @@ public class Customer {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public float getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(float discount) {
+        this.discount = discount;
+    }
+
+    public boolean isAbusive() {
+        return abuse;
+    }
+
+    public void setAbuse(boolean abuse) {
+        this.abuse = abuse;
     }
 
     /**
