@@ -33,7 +33,7 @@ public class CustomerDB {
                     + "Country varchar(40), "
                     + "Phone varchar(12), "
                     + "Email varchar(40), "
-                    + "CreditCard integer, "
+                    + "CreditCard varchar(30), "
                     + "Discount real, "
                     + "CancelAbuse char(1) DEFAULT 'N', "
                     + "CONSTRAINT Check_CancelAbuse_cc CHECK (CancelAbuse in ('Y', 'N'))"
@@ -69,7 +69,8 @@ public class CustomerDB {
             pstmt.setString(7, customer.getCountry());
             pstmt.setString(8, customer.getPhone());
             pstmt.setString(9, customer.getEmail());
-            pstmt.setInt(10, customer.getCreditCard());
+            // in the final this would be encrypetd here.
+            pstmt.setString(10, customer.getCreditCard() + "");
             pstmt.setFloat(11, customer.getDiscount());
             pstmt.executeUpdate();
         } catch (Exception e) {
@@ -118,7 +119,8 @@ public class CustomerDB {
             pstmt.setString(7, customer.getCountry());
             pstmt.setString(8, customer.getPhone());
             pstmt.setString(9, customer.getEmail());
-            pstmt.setInt(10, customer.getCreditCard());
+            // in the final this would be encrypetd here.
+            pstmt.setString(10, customer.getCreditCard() + "");
             pstmt.setFloat(11, customer.getDiscount());
             if (customer.isAbusive()) {
                 pstmt.setString(12, "Y");
@@ -170,7 +172,8 @@ public class CustomerDB {
             c.setCountry(rs.getString(8));
             c.setPhone(rs.getString(9));
             c.setEmail(rs.getString(10));
-            c.setCreditCard(rs.getInt(11));
+            // in the final version decryption would go here.
+            c.setCreditCard(Integer.parseInt(rs.getString(11)));
             c.setDiscount(rs.getFloat(12));
             char tmp = rs.getString(13).charAt(0);
             if (tmp == 'Y') {
@@ -218,9 +221,9 @@ public class CustomerDB {
                     c.setCountry(rs.getString(8));
                     c.setPhone(rs.getString(9));
                     c.setEmail(rs.getString(10));
-                    c.setCreditCard(rs.getInt(11));
+                    // in the final version decryption would go here.
+                    c.setCreditCard(Integer.parseInt(rs.getString(11)));
                     c.setDiscount(rs.getFloat(12));
-                    //System.out.println(rs.getString(13));
                     char tmp = rs.getString(13).charAt(0);
                     if (tmp == 'Y') {
                         c.setAbuse(true);
