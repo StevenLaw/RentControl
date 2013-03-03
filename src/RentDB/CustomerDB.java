@@ -14,7 +14,7 @@ public class CustomerDB {
      *
      * @throws Exception if there is a database connection error
      */
-    public static void createCustomerList() throws Exception {
+    public static void createCustomerTable() throws Exception {
         Connection conn = null;
         Statement stmt;
 
@@ -82,10 +82,10 @@ public class CustomerDB {
     }
 
     /**
-     * UpdateCustomer takes in a Customer Object and extracts the CID to use to 
-     * update that particular record in the database.  It converts the 
-     * true/false value of the abuse flag into Y or N in the process.
-     * 
+     * UpdateCustomer takes in a Customer Object and extracts the CID to use to
+     * update that particular record in the database. It converts the true/false
+     * value of the abuse flag into Y or N in the process.
+     *
      * @param customer the updated customer to be propagated to the database
      * @return true if more than one record was updated
      * @throws Exception if there was a database error
@@ -134,19 +134,20 @@ public class CustomerDB {
         } finally {
             conn.close();
         }
-        
-        if (rows == 0)
+
+        if (rows == 0) {
             return false;
-        else
+        } else {
             return true;
+        }
     }
 
     /**
-     * getCustomer returns the single Customer that has the selected CID.  If 
+     * getCustomer returns the single Customer that has the selected CID. If
      * that CID is not in the database there is something wrong with the system
-     * because the CID should be hidden and should not be accessed directly.  
+     * because the CID should be hidden and should not be accessed directly.
      * Therefore it indicated a database error.
-     * 
+     *
      * @param CID the CID of the Customer to retrieve
      * @return the retrieved Customer
      * @throws Exception if there is a database error
@@ -173,7 +174,7 @@ public class CustomerDB {
             c.setPhone(rs.getString(9));
             c.setEmail(rs.getString(10));
             // in the final version decryption would go here.
-            c.setCreditCard(Integer.parseInt(rs.getString(11)));
+            c.setCreditCard(rs.getString(11));
             c.setDiscount(rs.getFloat(12));
             char tmp = rs.getString(13).charAt(0);
             if (tmp == 'Y') {
@@ -191,10 +192,10 @@ public class CustomerDB {
     }
 
     /**
-     * This will return an ArrayList of all the customers in the system.  I felt
-     * that it is best to use this system because it allows for better partial 
+     * This will return an ArrayList of all the customers in the system. I felt
+     * that it is best to use this system because it allows for better partial
      * name searching.
-     * 
+     *
      * @return the ArrayList of all the Customers in the system
      * @throws Exception if there is a database error
      */
@@ -222,7 +223,7 @@ public class CustomerDB {
                     c.setPhone(rs.getString(9));
                     c.setEmail(rs.getString(10));
                     // in the final version decryption would go here.
-                    c.setCreditCard(Integer.parseInt(rs.getString(11)));
+                    c.setCreditCard(rs.getString(11));
                     c.setDiscount(rs.getFloat(12));
                     char tmp = rs.getString(13).charAt(0);
                     if (tmp == 'Y') {
@@ -240,5 +241,20 @@ public class CustomerDB {
         }
 
         return list;
+    }
+
+    public static boolean tableExists() {
+        boolean exists = false;
+        try {
+            Connection conn = DBConnector.getConnection();
+            Statement stmt = conn.createStatement();
+            String statement = "SELECT count(*) From Customer";
+            ArrayList<Customer> list = new ArrayList<Customer>();
+            ResultSet rs = stmt.executeQuery(statement);
+            exists = true;
+        } catch (Exception e) {
+            
+        }
+        return exists;
     }
 }

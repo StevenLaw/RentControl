@@ -5,6 +5,8 @@
 package DBTest;
 import RentControl.Customer;
 import RentDB.*;
+import RentEncryption.AESEncryptStore;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -38,12 +40,16 @@ public class DBTest {
             }
         }
         
+        System.out.println("Customer Exists: " + CustomerDB.tableExists());
+        
         //Create table
         try {
-            CustomerDB.createCustomerList();
+            CustomerDB.createCustomerTable();
         } catch (Exception e) {
             System.out.println(e);
         }
+        
+        System.out.println("Customer Exists: " + CustomerDB.tableExists());
         
         //Add customer
         try {
@@ -89,6 +95,18 @@ public class DBTest {
             }
         } catch(Exception e) {
             System.out.println(e);
+        }
+        
+        //Test encryptionstore = new
+        AESEncryptStore store = new AESEncryptStore("Data.dbk", null);
+        try {
+            store.loadStore();
+        } catch (Exception e) {
+            try {
+                store.createStore();
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
         }
     }
 }

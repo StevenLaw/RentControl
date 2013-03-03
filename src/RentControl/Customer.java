@@ -19,7 +19,7 @@ public class Customer {
     private String country;
     private String phone;
     private String email;
-    private int creditCard;
+    private String creditCard;
     private float discount;
     private boolean abuse;
 
@@ -65,11 +65,11 @@ public class Customer {
         this.country = country;
     }
 
-    public int getCreditCard() {
+    public String getCreditCard() {
         return creditCard;
     }
 
-    public void setCreditCard(int creditCard) {
+    public void setCreditCard(String creditCard) {
         this.creditCard = creditCard;
     }
 
